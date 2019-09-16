@@ -1,0 +1,24 @@
+[
+  {
+    "family": "FiraMono",
+    "fonts": [
+      {
+        "asset": "fonts/FiraMono-Regular.ttf"
+      },
+      {
+        "asset": "fonts/FiraMono-Bold.ttf"
+      },
+      {
+        "asset": "fonts/FiraMono-Medium.ttf"
+      }
+    ]
+  },
+  {
+    "family": "OpenSans",
+    "fonts": [
+      {
+        "asset": "fonts/OpenSans-Light.ttf"
+      }
+    ]
+  }
+]
