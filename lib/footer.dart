@@ -1,6 +1,6 @@
-import 'package:flutter_web/gestures.dart';
-import 'package:flutter_web/material.dart';
-import 'dart:html' as web;
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:universal_html/html.dart' as web;
 
 class Footer extends StatelessWidget {
   const Footer({Key key}) : super(key: key);
@@ -58,9 +58,8 @@ class Footer extends StatelessWidget {
                             style: linkStyle.copyWith(fontSize: subTextSize),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                web.window.open(
-                                    'https://www.flaticon.com/authors/freepik',
-                                    'freepik');
+                                web.window
+                                    .open('https://www.flaticon.com/authors/freepik', '');
                               }),
                       ),
                       Text(
@@ -74,8 +73,7 @@ class Footer extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 web.window.open(
-                                    'https://www.flaticon.com/authors/smashicons',
-                                    'freepik');
+                                    'https://www.flaticon.com/authors/smashicons', '');
                               }),
                       ),
                       Text(
@@ -88,7 +86,7 @@ class Footer extends StatelessWidget {
                             style: linkStyle.copyWith(fontSize: subTextSize),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                web.window.open('https://www.flaticon.com/', 'freepik');
+                                web.window.open('https://www.flaticon.com/', '');
                               }),
                       )
                     ],

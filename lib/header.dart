@@ -1,5 +1,5 @@
-import 'package:flutter_web/material.dart';
-import 'dart:html' as web;
+import 'package:flutter/material.dart';
+import 'package:universal_html/html.dart' as web;
 
 class Header extends StatelessWidget {
   const Header({Key key}) : super(key: key);
@@ -91,7 +91,7 @@ class Header extends StatelessWidget {
                       FlatButton(
                         hoverColor: Colors.red,
                         onPressed: () {
-                          web.window.open('mailto:someone@yoursite.com', 'Email me');
+                          web.window.open('mailto:darksightkellar@gmail.com', 'Email me');
                         },
                         child: Container(
                           width: socialIconSize,

@@ -1,25 +1,32 @@
 name: my_website_flutter
-description: An app built using Flutter for web
+description: Personal website of Kelvin Lartey
+
+version: 1.0.0+1
 
 environment:
-  # You must be using Flutter >=1.5.0 or Dart >=2.3.0
-  sdk: '>=2.5.0 <3.0.0'
+  sdk: ">=2.5.0 <3.0.0"
 
 dependencies:
-  flutter_web: any
-  flutter_web_ui: any
+  flutter:
+    sdk: flutter
+    
+  universal_html: ^1.1.6
 
 dev_dependencies:
-  build_runner: ^1.6.0
-  build_web_compilers: ^2.3.0
-  pedantic: ^1.8.0
+  flutter_test:
+    sdk: flutter
 
-dependency_overrides:
-  flutter_web:
-    git:
-      url: https://github.com/flutter/flutter_web
-      path: packages/flutter_web
-  flutter_web_ui:
-    git:
-      url: https://github.com/flutter/flutter_web
-      path: packages/flutter_web_ui
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: FiraMono
+      fonts:
+        - asset: assets/fonts/FiraMono-Regular.ttf
+
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Light.ttf
