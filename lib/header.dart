@@ -1,10 +1,15 @@
 import 'package:flutter_web/material.dart';
+import 'dart:html' as web;
 
 class Header extends StatelessWidget {
   const Header({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double profilePictureSize = 250.0;
+    double mainTextSize = 22.0;
+    double socialIconSize = 30.0;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -21,8 +26,8 @@ class Header extends StatelessWidget {
                   // Profile Picture
                   Container(
                     margin: EdgeInsetsDirectional.only(bottom: 30, top: 10),
-                    width: 250.0,
-                    height: 250.0,
+                    width: profilePictureSize,
+                    height: profilePictureSize,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
@@ -37,12 +42,12 @@ class Header extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: 'FiraMono',
                         fontWeight: FontWeight.normal,
-                        fontSize: 22),
+                        fontSize: mainTextSize),
                     textAlign: TextAlign.center,
                   ),
 
                   Text(
-                    '...yo that rhymed, hehe.  :)',
+                    '...yo that rhymed, hehe  :)',
                     style: TextStyle(
                       fontFamily: 'OpenSans',
                       fontWeight: FontWeight.normal,
@@ -53,6 +58,53 @@ class Header extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[],
+                  ),
+
+                  SizedBox(
+                    height: 50,
+                  ),
+
+                  // Social Icons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      // Twitter
+                      FlatButton(
+                        hoverColor: Colors.blueGrey,
+                        onPressed: () {
+                          web.window.open(
+                              'https://www.twitter.com/darksightkellar', 'My Twitter');
+                        },
+                        child: Container(
+                          width: socialIconSize,
+                          height: socialIconSize,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('twitter.png'),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      // Gmail
+                      FlatButton(
+                        hoverColor: Colors.red,
+                        onPressed: () {
+                          web.window.open('mailto:someone@yoursite.com', 'Email me');
+                        },
+                        child: Container(
+                          width: socialIconSize,
+                          height: socialIconSize,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('email.png'),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),

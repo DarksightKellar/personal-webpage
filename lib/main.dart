@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:my_website_flutter/footer.dart';
 import 'header.dart';
 
 void main() => runApp(MyApp());
@@ -10,9 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Kelvin Lartey - Résumé',
       theme: ThemeData(
-        primaryColor: Colors.white,
-        accentColor: Colors.black26,
-      ),
+          primaryColor: Colors.white,
+          accentColor: Colors.black26,
+          fontFamily: 'OpenSans'),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -40,6 +41,8 @@ class MyHomePage extends StatelessWidget {
             child: ListView(
               children: <Widget>[
                 Header(),
+                SizedBox(height: 50),
+                Footer(),
               ],
             ),
           ),
