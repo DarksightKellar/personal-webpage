@@ -19,8 +19,10 @@ class Header extends StatelessWidget {
               color: Colors.white,
               image: DecorationImage(image: AssetImage('header.jpg'), fit: BoxFit.cover),
             ),
+
+            // Content
             child: Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 100),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               child: Column(
                 children: [
                   // Profile Picture
@@ -38,14 +40,13 @@ class Header extends StatelessWidget {
                   ),
 
                   Text(
-                    'Hi there, Kelvin here',
+                    'Hey there, Kelvin here',
                     style: TextStyle(
                         fontFamily: 'FiraMono',
                         fontWeight: FontWeight.normal,
                         fontSize: mainTextSize),
                     textAlign: TextAlign.center,
                   ),
-
                   Text(
                     '...yo that rhymed, hehe  :)',
                     style: TextStyle(
@@ -55,13 +56,8 @@ class Header extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[],
-                  ),
-
                   SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
 
                   // Social Icons
@@ -69,43 +65,49 @@ class Header extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       // Twitter
-                      FlatButton(
-                        hoverColor: Colors.blueGrey,
-                        onPressed: () {
-                          web.window.open(
-                              'https://www.twitter.com/darksightkellar', 'My Twitter');
-                        },
-                        child: Container(
-                          width: socialIconSize,
-                          height: socialIconSize,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('twitter.png'),
+                      Tooltip(
+                        message: 'Follow me @darksightkellar',
+                        child: FlatButton(
+                          hoverColor: Colors.blueGrey,
+                          onPressed: () {
+                            web.window.open(
+                                'https://www.twitter.com/darksightkellar', 'My Twitter');
+                          },
+                          child: Container(
+                            width: socialIconSize,
+                            height: socialIconSize,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('twitter.png'),
+                              ),
                             ),
                           ),
                         ),
                       ),
 
                       // Gmail
-                      FlatButton(
-                        hoverColor: Colors.red,
-                        onPressed: () {
-                          web.window.open('mailto:darksightkellar@gmail.com', 'Email me');
-                        },
-                        child: Container(
-                          width: socialIconSize,
-                          height: socialIconSize,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('email.png'),
+                      Tooltip(
+                        message: 'Contact me',
+                        child: FlatButton(
+                          hoverColor: Colors.red,
+                          onPressed: () {
+                            web.window.open('mailto:kelvin@geocemslab.com', 'Email me');
+                          },
+                          child: Container(
+                            width: socialIconSize,
+                            height: socialIconSize,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('email.png'),
+                              ),
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
