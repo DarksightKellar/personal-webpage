@@ -14,13 +14,13 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.white,
           accentColor: Colors.black26,
           fontFamily: 'OpenSans'),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Home(title: 'Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class Home extends StatelessWidget {
+  Home({Key key, this.title}) : super(key: key);
 
   final String title;
 
