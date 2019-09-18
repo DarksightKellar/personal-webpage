@@ -24,8 +24,91 @@ class Home extends StatelessWidget {
 
   final String title;
 
+  final double spacing = 20;
+
+  final topicStyle = TextStyle(
+      decoration: TextDecoration.underline,
+      fontSize: 17,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'FiraMono',
+      height: 2);
+  final titleStyle = TextStyle(fontSize: 16, fontFamily: 'FiraMono', height: 2);
+  final textStyle = TextStyle(fontFamily: 'OpenSans', height: 2);
+
+  Widget buildWorkEducationSection() {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          // EDUCATION
+          Column(
+            children: [
+              Text('Education', style: topicStyle),
+              Row(children: [
+                Text('KNUST ', style: titleStyle),
+                Text('BSc. Computer Engineering')
+              ]),
+              Row(children: [
+                Text('KNUST ', style: titleStyle),
+                Text('MPhil. Computer Engineering', style: textStyle),
+              ])
+            ],
+          ),
+
+          // WORK
+          Column(
+            children: [
+              Text('Work', style: topicStyle),
+              Row(children: [
+                Text('Asqii Inc. ', style: titleStyle),
+                Text('Software Developer ', style: textStyle),
+                Text('2015 - 2017', style: textStyle)
+              ]),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildPortfolioSection() {
+    return Row(children: [
+      Expanded(
+          child: Column(
+        children: <Widget>[
+          Text('Some stuff I\'ve worked on...', style: titleStyle),
+          Center(
+            child: Container(
+              height: 50,
+              decoration: BoxDecoration(color: Colors.red),
+            ),
+          )
+        ],
+      ))
+    ]);
+  }
+
+  Widget buildAboutMeSection() {
+    return Row(children: [
+      Expanded(
+          child: Column(
+        children: [
+          Text('About me', style: titleStyle),
+          Center(
+            child: Container(
+              height: 50,
+              // child: Text(' stuff\nyh'),
+            ),
+          )
+        ],
+      ))
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
+    var _gap = SizedBox(height: spacing);
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -33,7 +116,7 @@ class Home extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontFamily: 'FiraMono'),
           ),
           centerTitle: true,
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.white,
         ),
         body: Container(
           decoration: BoxDecoration(color: Colors.black12),
@@ -41,7 +124,13 @@ class Home extends StatelessWidget {
             child: ListView(
               children: <Widget>[
                 Header(),
-                SizedBox(height: 50),
+                _gap,
+                buildAboutMeSection(),
+                _gap,
+                buildWorkEducationSection(),
+                _gap,
+                buildPortfolioSection(),
+                _gap,
                 Footer(),
               ],
             ),
