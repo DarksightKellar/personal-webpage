@@ -118,7 +118,7 @@ class Home extends StatelessWidget {
 
     return Column(
       children: [
-        Text('Some stuff I\'ve worked on...', style: titleStyle),
+        Text('Stuff I\'ve worked on...', style: titleStyle),
         Container(
           padding: EdgeInsets.symmetric(vertical: 25),
           child: Column(children: [
@@ -197,52 +197,55 @@ class Home extends StatelessWidget {
             "Some buzzwords that also apply to me...",
             style: titleStyle,
           ),
-          GridView.count(
-            crossAxisCount: 4,
-            children: <Widget>[
-              GridTile(
-                child: _renderItem(
-                  'C++',
-                  'https://icongr.am/devicon/cplusplus-line.svg?size=$iconSize&color=000000',
+          Container(
+            constraints: BoxConstraints(maxHeight: 130, maxWidth: 550),
+            child: GridView.count(
+              crossAxisCount: 4,
+              children: <Widget>[
+                GridTile(
+                  child: _renderItem(
+                    'C++',
+                    'https://icongr.am/devicon/cplusplus-line.svg?size=$iconSize&color=000000',
+                  ),
                 ),
-              ),
-              GridTile(
-                child: _renderItem(
-                  "C# (WPF)",
-                  'https://icongr.am/devicon/csharp-original.svg?size=$iconSize&color=000000',
+                GridTile(
+                  child: _renderItem(
+                    "C# (WPF)",
+                    'https://icongr.am/devicon/csharp-original.svg?size=$iconSize&color=000000',
+                  ),
                 ),
-              ),
-              GridTile(
-                child: _renderItem(
-                  "JavaScript (React Native)",
-                  'https://icongr.am/devicon/javascript-original.svg?size=$iconSize&color=000000',
+                GridTile(
+                  child: _renderItem(
+                    "JavaScript (React Native)",
+                    'https://icongr.am/devicon/javascript-original.svg?size=$iconSize&color=000000',
+                  ),
                 ),
-              ),
-              GridTile(
-                child: _renderItem(
-                  "Flutter",
-                  'https://icongr.am/simple/flutter.svg?size=$iconSize&color=5FC8F8',
+                GridTile(
+                  child: _renderItem(
+                    "Flutter",
+                    'https://icongr.am/simple/flutter.svg?size=$iconSize&color=5FC8F8',
+                  ),
                 ),
-              ),
-              GridTile(
-                child: _renderItem(
-                  "Database design",
-                  'https://icongr.am/devicon/mysql-plain.svg?size=$iconSize&color=000000',
+                GridTile(
+                  child: _renderItem(
+                    "Database design",
+                    'https://icongr.am/devicon/mysql-plain.svg?size=$iconSize&color=000000',
+                  ),
                 ),
-              ),
-              GridTile(
-                child: _renderItem(
-                  "Python",
-                  'https://icongr.am/devicon/python-original.svg?size=$iconSize&color=000000',
+                GridTile(
+                  child: _renderItem(
+                    "Python",
+                    'https://icongr.am/devicon/python-original.svg?size=$iconSize&color=000000',
+                  ),
                 ),
-              ),
-              GridTile(
-                child: _renderItem(
-                  "Android",
-                  'https://icongr.am/devicon/android-original.svg?size=$iconSize&color=000000',
+                GridTile(
+                  child: _renderItem(
+                    "Android",
+                    'https://icongr.am/devicon/android-original.svg?size=$iconSize&color=000000',
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
@@ -273,7 +276,7 @@ class Home extends StatelessWidget {
                 _gap,
                 _buildWorkEducationSection(),
                 _gap,
-                // buildSkillsSection(),
+                buildSkillsSection(),
                 _gap,
                 _buildPortfolioSection(),
                 _gap,
