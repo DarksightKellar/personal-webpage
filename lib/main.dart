@@ -87,13 +87,13 @@ class Home extends StatelessWidget {
   }
 
   Widget _buildPortfolioSection() {
-    var _renderProject = (name, info, image) {
+    var _renderProject = (name, info, imageSrc) {
       return Card(
         child: Container(
           width: 500,
           padding: EdgeInsets.all(5),
           child: Row(children: [
-            Image.asset(image),
+            Image.network(imageSrc),
             Expanded(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 10),
@@ -126,35 +126,27 @@ class Home extends StatelessWidget {
               constraints: BoxConstraints(maxHeight: 180),
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   _renderProject(
                     'Apomuden',
                     'A hospital information management suite',
-                    'fon.png',
+                    'https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/ap.png',
                   ),
                   _renderProject(
                     'FunnyorNot',
                     'Social mobile app for sharing funny content (but currently inactive)',
-                    "fon.png",
+                    "https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/fon.png",
                   ),
                   _renderProject(
-                    'REMSys',
-                    'An Ophthalmic clinic management system',
-                    'fon.png',
+                    'SchoolDesk',
+                    'An offline-first school management system (database design and first iteration of project)',
+                    'https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/sd.png',
                   ),
                 ],
               ),
             ),
             Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _renderProject(
-                  'SchoolDesk',
-                  'An offline-first school management system (database design and first iteration of project)',
-                  'fon.png',
-                ),
-              ],
+              children: [],
             ),
           ]),
         )
