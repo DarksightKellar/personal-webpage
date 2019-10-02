@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Kelvin Lartey - Résumé',
       theme: ThemeData(
-          primaryColor: Colors.white,
-          accentColor: Colors.black26,
+          primaryColor: Colors.black,
+          accentColor: Color(0xff222527),
           fontFamily: 'OpenSans'),
       home: Home(title: 'Home Page'),
     );
@@ -265,7 +265,7 @@ class Home extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontFamily: 'FiraMono'),
           ),
           centerTitle: true,
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).accentColor,
         ),
         body: Container(
           decoration: BoxDecoration(color: Colors.black12),
