@@ -130,7 +130,7 @@ class Home extends StatelessWidget {
                   _renderProject(
                     'Apomuden',
                     'A hospital information management suite',
-                    'https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/ap.png',
+                    'https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/apdn.png',
                   ),
                   _renderProject(
                     'FunnyorNot',
@@ -140,13 +140,16 @@ class Home extends StatelessWidget {
                   _renderProject(
                     'SchoolDesk',
                     'An offline-first school management system (database design and first iteration of project)',
-                    'https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/sd.png',
+                    'https://raw.githubusercontent.com/DarksightKellar/personal-webpage/master/assets/images/sdesk.png',
                   ),
                 ],
               ),
             ),
-            Row(
-              children: [],
+            Center(
+              child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  child: Text(
+                      '3 other desktop applications built internally with C# and WPF')),
             ),
           ]),
         )
